@@ -39,8 +39,11 @@ public class TestConsola {
 		ArrayList<Figura> lista = new ArrayList<>();
 		lista.add(cir1);
 		lista.add(tri1);
-		
-		lista.stream().allMatch(e -> e.getArea() > 10);	// e es una figura (lo sabe porque lista es una lista de figuras)
+
+		// Sólo java 8
+		lista.stream().allMatch(e -> e.getArea() > 10);	// e es una figura (lo sabe porque lista es una lista de figuras) Devuelve boolean
+		lista.stream().filter(e -> e.getArea() > 10);	// e es una figura (lo sabe porque lista es una lista de figuras) Devuelve los que lo cumplan
+		lista.parallelStream().filter(e -> e.getArea() > 10);	// e es una figura (lo sabe porque lista es una lista de figuras) Devuelve los que lo cumplan. En paralelo.
 	}
 
 	private static int operar(OperacionBinaria op, int a, int b) {
