@@ -18,12 +18,15 @@ public class Circulo extends Figura {
 	
 	@Override
 	public double getArea() {
-		return Math.PI*(radio*radio);
+		return Math.PI*(Math.pow(radio, 2));	// elevado a dos
 	}
 	
 	@Override
 	public String toString() {
-		return "Circulo [radio="+radio+", getX()="+getX()+", getY()="+getY()+"]";
+		return "Círculo [radio="+radio+", PosiciónX()="+getX()+", PosiciónY()="+getY()+"]";
 	}
 
+	public void noSePuedeAcceder() {
+		
+	}
 }

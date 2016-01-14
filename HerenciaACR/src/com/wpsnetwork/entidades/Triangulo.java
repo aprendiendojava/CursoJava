@@ -28,4 +28,9 @@ public final class Triangulo extends Figura {		// polimorfismo!!!!!!!!!!!!!!
 	public double getArea() {
 		return (base*altura)/2;
 	}
+
+	@Override
+	public String toString() {
+		return "Triangulo [base=" + base + ", altura=" + altura + "]";
+	}
 }

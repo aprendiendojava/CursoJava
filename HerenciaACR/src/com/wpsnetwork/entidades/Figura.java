@@ -28,4 +28,9 @@ public abstract class Figura {
 	}
 	
 	public abstract double getArea();
+	
+	@Override
+	public String toString() {
+		return "Figura [PosiciónX=" + x + ", PosiciónY=" + y + "]";
+	}
 }
