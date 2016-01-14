@@ -1,20 +1,15 @@
 package com.wpsnetwork.entidades;
 
-import com.wpsnetwork.entidades.enumerados.TipoTriangulo;
-
-public final class Triangulo extends Figura {		// polimorfismo!!!!!!!!!!!!!!
-
+public class Rectangulo extends Figura {
 	private int base;
 	private int altura;
-	private TipoTriangulo tipo;
-
-	public Triangulo(int x, int y, int base, int altura, TipoTriangulo tipo) {
+	
+	public Rectangulo(int x, int y, int base, int altura) {
 		super(x, y);
 		this.base = base;
 		this.altura = altura;
-		this.tipo = tipo;
 	}
-
+	
 	public int getBase() {
 		return base;
 	}
@@ -27,15 +22,15 @@ public final class Triangulo extends Figura {		// polimorfismo!!!!!!!!!!!!!!
 	public void setAltura(int altura) {
 		this.altura = altura;
 	}
-	
+
 	@Override
 	public double getArea() {
-		return (base*altura)/2;
+		return this.base*this.altura;
 	}
 
 	@Override
 	public String toString() {
-		return "Triangulo [PosiciónX()="+getX()+", PosiciónY()="+getY()+", base="+base+", altura="+altura+"]";
+		return "Rectangulo [PosX()=" + getX() + ", PosY()=" + getY() + ",  base=" + base + ", altura=" + altura +"]";
 	}
 
 	@Override
@@ -44,3 +39,4 @@ public final class Triangulo extends Figura {		// polimorfismo!!!!!!!!!!!!!!
 		
 	}
 }
+

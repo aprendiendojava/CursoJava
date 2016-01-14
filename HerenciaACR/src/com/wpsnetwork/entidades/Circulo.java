@@ -23,10 +23,16 @@ public class Circulo extends Figura {
 	
 	@Override
 	public String toString() {
-		return "Círculo [radio="+radio+", PosiciónX()="+getX()+", PosiciónY()="+getY()+"]";
+		return "Círculo [PosiciónX()="+getX()+", PosiciónY()="+getY()+", radio="+radio+"]";
 	}
 
 	public void noSePuedeAcceder() {
+		
+	}
+
+	@Override
+	public void dibujar() {
+		// TODO Auto-generated method stub
 		
 	}
 }

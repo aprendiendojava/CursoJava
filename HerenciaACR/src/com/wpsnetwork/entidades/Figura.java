@@ -1,6 +1,8 @@
 package com.wpsnetwork.entidades;
 
-public abstract class Figura {
+import com.wpsnetwork.interfaces.Dibujable;
+
+public abstract class Figura implements Dibujable {
 	private int x;
 	private int y;
 	
@@ -28,7 +30,7 @@ public abstract class Figura {
 	}
 	
 	public abstract double getArea();
-	
+
 	@Override
 	public String toString() {
 		return "Figura [PosiciónX=" + x + ", PosiciónY=" + y + "]";
