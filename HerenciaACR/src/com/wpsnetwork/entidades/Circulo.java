@@ -1,13 +1,12 @@
 package com.wpsnetwork.entidades;
 
-public class Circulo extends Figura{
+public class Circulo extends Figura {
 	
 	private double radio;
 
-	@Override
-	public double getArea() {
-		// TODO Auto-generated method stub
-		return Math.PI*(radio*radio);
+	public Circulo(int x, int y, double radio) {
+		super(x, y);
+		this.radio = radio;
 	}
 
 	public double getRadio() {
@@ -15,6 +14,16 @@ public class Circulo extends Figura{
 	}
 	public void setRadio(double radio) {
 		this.radio = radio;
+	}
+	
+	@Override
+	public double getArea() {
+		return Math.PI*(radio*radio);
+	}
+	
+	@Override
+	public String toString() {
+		return "Circulo [radio="+radio+", getX()="+getX()+", getY()="+getY()+"]";
 	}
 
 }
