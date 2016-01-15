@@ -99,11 +99,12 @@ public class Main {				// CamelCase (nomenclatura en java)
 			System.out.println("Es dos o tres");
 			break;
 		default:
-			System.out.println("No es ni uno ni dos ni tres");
+			System.out.println("No es ni uno ni dos ni tres (sino tres)");
 		}
 		
 		System.out.println("-if terciario");
 		boolean resultado = (2==3)?true:false;
+		System.out.println(resultado);
 		
 //		Iterativas
 //		==========
