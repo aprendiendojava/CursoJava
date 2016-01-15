@@ -13,7 +13,6 @@ public class Circulo extends Figura {
 		return radio;
 	}
 	public void setRadio(double radio) {
-		//pepe
 		this.radio = radio;
 	}
 	
