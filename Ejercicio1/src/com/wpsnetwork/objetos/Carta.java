@@ -14,6 +14,12 @@ public class Carta {
 		this.paloCarta = paloCarta;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return num + " de " + paloCarta.toString();
+	}
+
 	public int getNum() {
 		return num;
 	}
