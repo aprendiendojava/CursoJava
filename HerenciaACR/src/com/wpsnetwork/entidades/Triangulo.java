@@ -35,7 +35,7 @@ public final class Triangulo extends Figura {		// polimorfismo!!!!!!!!!!!!!!
 
 	@Override
 	public String toString() {
-		return "Triangulo [PosiciónX()="+getX()+", PosiciónY()="+getY()+", base="+base+", altura="+altura+"]";
+		return "Triangulo [PosiciÃ³nX()="+getX()+", PosiciÃ³nY()="+getY()+", base="+base+", altura="+altura+"]";
 	}
 
 	@Override
