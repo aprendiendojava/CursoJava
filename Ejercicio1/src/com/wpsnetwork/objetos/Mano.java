@@ -2,7 +2,8 @@ package com.wpsnetwork.objetos;
 
 public class Mano {
 	private int numCartas;
-	Carta[] cartas;
+	private Carta[] cartas;
+	private int numCarta;
 	
 	public void repartir (Carta[] cartas) {
 		
@@ -13,6 +14,10 @@ public class Mano {
 			this.cartas[cont] = a;
 		}
 		
+	}
+	
+	public void addCarta (Carta carta){
+		this.cartas[this.numCarta] = carta;
 	}
 	
 	public int getNumCartas() {
@@ -48,7 +53,5 @@ public class Mano {
 		}
 		
 		return cadena;
-	}
-	
-	
+	}	
 }

@@ -10,6 +10,8 @@ public class Test {
 		baraja.barajar();
 		
 		System.out.println(baraja.toString());
+		
+		System.out.println("La primera carta es "+baraja.reparte().toString());
 	}
 
 }

@@ -66,6 +66,18 @@ public class Baraja {
 		java.util.Collections.shuffle(barajaDeCartas);	// Esto las desordena aleatoriamente
 	}
 
+	public Carta reparte () {
+		return (Carta)barajaDeCartas.firstElement();
+	}
+	
+	public Mano mano (int i){
+		Mano mano = new Mano();
+		for (int j=0;j<i;j++){
+			mano.addCarta((Carta)barajaDeCartas.get(i));
+		}
+		return mano;
+	}
+	
 	@Override
 	public String toString() {
 		String cadena = new String ();
