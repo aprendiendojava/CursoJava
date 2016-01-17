@@ -11,6 +11,6 @@ public enum PaloCarta {
 
 	@Override
 	public String toString() {
-		return " enum ["+paloCarta+"]";
+		return paloCarta;
 	}
 }

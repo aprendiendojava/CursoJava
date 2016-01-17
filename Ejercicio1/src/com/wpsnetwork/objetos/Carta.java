@@ -12,12 +12,29 @@ public class Carta {
 		super();
 		this.num = num;
 		this.paloCarta = paloCarta;
+		puntuacion = 0;
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return num + " de " + paloCarta.toString();
+		String cadena = new String();
+		switch(this.num){
+			case 1:
+				cadena = "as";
+				break;
+			case 8:
+				cadena = "sota";
+				break;
+			case 9:
+				cadena = "caballo";
+				break;
+			case 10:
+				cadena = "rey";
+				break;
+			default:
+				cadena = Integer.toString(this.getNum());
+		}
+		return  cadena + " de " + this.getPaloCarta().toString();
 	}
 
 	public int getNum() {
