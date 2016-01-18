@@ -6,6 +6,7 @@ import com.wpsnetwork.patrones.abstractfactory.FormaFactory;
 import com.wpsnetwork.patrones.abstractfactory.interfaces.Forma;
 import com.wpsnetwork.patrones.factory.Paciente;
 import com.wpsnetwork.patrones.factory.PacienteFactory;
+import com.wpsnetwork.patrones.singleton.ClienteSingleton;
 
 public class Main {
 
@@ -19,6 +20,10 @@ public class Main {
 		FactoryProducer fabrica2 = (ColorFactory)FactoryProducer.getFactory("COLOR");
 		
 		Forma fig1 = fabrica1.getForma("TRIANGULO");
+		
+		//
+		ClienteSingleton c1 = ClienteSingleton.getInstance();
+		ClienteSingleton c2 = ClienteSingleton.getInstance();
 	}
 
 }
