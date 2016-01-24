@@ -30,6 +30,9 @@ public class Piso {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Piso [planta=" + planta + ", numPuerta=" + numPuerta + ", precio=" + precio + "]";
+	}
 }
