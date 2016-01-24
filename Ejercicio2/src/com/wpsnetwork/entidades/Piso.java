@@ -5,6 +5,13 @@ public class Piso {
 	private int numPuerta;
 	private double precio;
 	
+	public Piso(int planta, int numPuerta, double precio) {
+		super();
+		this.planta = planta;
+		this.numPuerta = numPuerta;
+		this.precio = precio;
+	}
+	
 	public int getPlanta() {
 		return planta;
 	}
