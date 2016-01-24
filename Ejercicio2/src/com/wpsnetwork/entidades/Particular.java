@@ -1,5 +1,5 @@
 package com.wpsnetwork.entidades;
 
-public class Persona extends Inquilino{
+public class Particular extends Inquilino{
 	private String nif;
 }
