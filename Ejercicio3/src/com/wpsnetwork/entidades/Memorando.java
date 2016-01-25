@@ -2,13 +2,13 @@ package com.wpsnetwork.entidades;
 
 import java.util.List;
 
+import com.wpsnetwork.interfaces.IProcesa;
+
 public class Memorando {
 	private String titulo;
 	private String[] listaArticulos;
 //	private static final int CAPACIDAD = 10;
 	private int numArticulos;
-
-	
 
 	//HACERLO CON EXPRESIONES LAMBDA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	//HACERLO CON EXPRESIONES LAMBDA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -42,9 +42,25 @@ public class Memorando {
 		return numArticulos;
 	}
 	
-	public String[] articulosQueCumplenCon (String cond){
+	public static void main (String args[]){
+		String[] articulos = new String[]{"1","2","3","4","5","6"};
+		articulos[4] = "Primer artículo";
+		articulos[1] = "Segundo artículo";
+		articulos[2] = "Tercero artículo";
+		articulos[3] = "Cuarto artículo";
+		System.out.println(articulos[1]);
+		System.out.println(articulosCon ("artículo")[1]);
+	}
+	
+	public static String[] articulosQueCumplenCon (IProcesa validacion){
 		String[] articulos = null;
+		
 		return articulos;
+	}
+	
+	public static String[] articulosCon (String texto){
+		String[] articulos = new String[]{"1","artículo"};
+		return articulosQueCumplenCon(valida -> articulos[1].contains(texto));
 	}
 	
 }

@@ -66,7 +66,7 @@ public class Alquiler {
 	public String toString() {
 		return "Alquiler [PrecioAlquiler="+getPrecioAlquiler()+", Descuento="+getDescuento()+", FechaContrato="+getFechaContrato()
 				+ ", Inquilino=" + getInqui() + ", Piso=" + getPiso() + ", getIvaActual()=" + getIvaActual()
-				+ "]";
+				+ "]\n";
 	}
 
 }

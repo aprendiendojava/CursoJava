@@ -1,5 +1,5 @@
 package com.wpsnetwork.interfaces;
 
 public interface IProcesa {
-	public boolean valida(String memorando);
+	public boolean valida(String art);
 }

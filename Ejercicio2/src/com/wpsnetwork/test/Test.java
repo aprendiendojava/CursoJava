@@ -40,11 +40,10 @@ public class Test {
 		Particular particular4 = new Particular("Mary", "12345674Q");
 		Alquiler alquiler4 = new Alquiler(new Date(), particular4, piso4);
 		listaAlquileres.add(alquiler4);
-		alquiler3.setListaAlquileres(listaAlquileres);
+		alquiler4.setListaAlquileres(listaAlquileres);
 		
-		for (Alquiler a: listaAlquileres){
-			System.out.println(a.getListaAlquileres().toString());
-		}
+		System.out.println(listaAlquileres.toString());
+
 	}
 
 }
