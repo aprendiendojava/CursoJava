@@ -54,13 +54,18 @@ public class Memorando {
 	
 	public static String[] articulosQueCumplenCon (IProcesa validacion){
 		String[] articulos = null;
-		
+//		for(){
+//			if(){
+//				
+//			}
+//			
+//		}
 		return articulos;
 	}
 	
 	public static String[] articulosCon (String texto){
-		String[] articulos = new String[]{"1","artículo"};
-		return articulosQueCumplenCon(valida -> articulos[1].contains(texto));
+		return articulosQueCumplenCon(articulo -> articulo.contains(texto));
+		// articulosQueCumplenCon(articulo -> !articulo.contains(texto));
 	}
 	
 }
