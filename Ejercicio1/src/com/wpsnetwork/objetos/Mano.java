@@ -18,6 +18,7 @@ public class Mano {
 	
 	public void addCarta (Carta carta){
 		this.cartas[this.numCarta] = carta;
+		this.numCarta++;
 	}
 	
 	public int getNumCartas() {
@@ -26,7 +27,7 @@ public class Mano {
 	
 	public double puntuacion () {
 		
-		double suma = 0;
+		int suma = 0;
 		
 		for(Carta a : cartas){
 			suma = suma + a.getPuntuacion();

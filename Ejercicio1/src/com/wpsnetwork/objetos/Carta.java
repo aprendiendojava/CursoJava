@@ -6,7 +6,7 @@ public class Carta {
 	
 	private int num;
 	private PaloCarta paloCarta;
-	private double puntuacion;
+	private int puntuacion;
 	
 	public Carta(int num, PaloCarta paloCarta) {
 		super();
@@ -45,7 +45,7 @@ public class Carta {
 		return paloCarta;
 	}
 
-	public double getPuntuacion() {
+	public int getPuntuacion() {
 		return puntuacion;
 	}
 }

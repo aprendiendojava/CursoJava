@@ -6,12 +6,12 @@ public class Test {
 
 	public static void main(String[] args) {
 		Baraja baraja = new Baraja();
-		baraja.iniciarJuego();
+//		baraja.iniciarJuego();
 		baraja.barajar();
 		
 		System.out.println(baraja.toString());
 		
-		System.out.println("La primera carta es "+baraja.reparte().toString());
+		System.out.println("La primera carta es el "+baraja.reparte().toString());
 	}
 
 }

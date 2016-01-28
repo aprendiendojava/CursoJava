@@ -1,8 +1,6 @@
 package com.wpsnetwork.objetos;
 
-import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.List;
 import java.util.Vector;
 
 import com.wpsnetwork.enumerados.PaloCarta;
@@ -10,20 +8,24 @@ import com.wpsnetwork.objetos.Carta;
 
 public class Baraja {
 
-	Vector barajaDeCartas = new Vector(40);
+	Vector<Carta> barajaDeCartas = new Vector(40);
+
+	public Baraja(){
+		this.iniciarJuego();
+	}
 	
-	public void iniciarJuego(){
-		Vector oros = new Vector(10);
-		Vector copas = new Vector(10);
-		Vector espadas = new Vector(10);
-		Vector bastos = new Vector(10);
+	private void iniciarJuego(){
+		Vector<Carta> oros = new Vector(10);
+		Vector<Carta> copas = new Vector(10);
+		Vector<Carta> espadas = new Vector(10);
+		Vector<Carta> bastos = new Vector(10);
 		int i = 0;
 		for (i=1;i<=10;i++){
         	PaloCarta palo = PaloCarta.OROS;
         	Carta carta = new Carta(i,palo);
         	bastos.addElement(carta);
 		}
-		Enumeration enumeracionOros = oros.elements();
+		Enumeration<Carta> enumeracionOros = oros.elements();
         while(enumeracionOros.hasMoreElements()){
             barajaDeCartas.addElement((Carta)enumeracionOros.nextElement());
         }
@@ -33,7 +35,7 @@ public class Baraja {
         	Carta carta = new Carta(i,palo);
         	bastos.addElement(carta);
 		}
-		Enumeration enumeracionCopas = copas.elements();
+		Enumeration<Carta> enumeracionCopas = copas.elements();
 		while(enumeracionCopas.hasMoreElements()){
         	barajaDeCartas.addElement((Carta)enumeracionCopas.nextElement());
         }
@@ -43,7 +45,7 @@ public class Baraja {
         	Carta carta = new Carta(i,palo);
         	bastos.addElement(carta);
 		}
-		Enumeration enumeracionEspadas = espadas.elements();
+		Enumeration<Carta> enumeracionEspadas = espadas.elements();
 		while(enumeracionEspadas.hasMoreElements()){
         	barajaDeCartas.addElement((Carta)enumeracionEspadas.nextElement());
         }
@@ -52,14 +54,10 @@ public class Baraja {
         	Carta carta = new Carta(i,palo);
         	bastos.addElement(carta);
 		}
-		Enumeration enumeracionBastos = bastos.elements();
+		Enumeration<Carta> enumeracionBastos = bastos.elements();
         while(enumeracionBastos.hasMoreElements()){
         	barajaDeCartas.addElement((Carta)enumeracionBastos.nextElement());
         }
-	}
-	
-	public void Baraja(){
-		this.iniciarJuego();
 	}
 	
 	public void barajar(){
