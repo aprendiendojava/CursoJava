@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.ToIntFunction;
+import java.util.stream.Collectors;
 
 import com.wpsnetwork.entidades.Persona;
+
 
 public class Test {
 
@@ -42,6 +45,9 @@ public class Test {
 //		for(String n:resultado){		//Ponemos en el resultado los mayores de 3 letras. 
 //			System.out.println(n.toString());
 //		}
+		
+		
+		////// PROGRAMACIÓN FUNCIONAL ///////
 		
 		// La otra forma de hacerlo es con stream
 		String[] nombres = listaNombres.stream()
@@ -91,7 +97,46 @@ public class Test {
 							.toArray(len -> new String[len]);
 		
 		System.out.println(Arrays.toString(n2));
-							
+
+		// Queremos la media de las edades
+		double media = personas.stream()
+								.mapToInt(Persona::getEdad) // convierte de persona a int
+								.average()					// hace la media
+								.getAsDouble();				// obtiene el valor double
+		
+		System.out.println("Media: "+media);
+		
+		// Queremos la suma de las edades
+		int suma = personas.stream()
+				.mapToInt(Persona::getEdad) // convierte de persona a int
+				.sum();						// suma
+
+		System.out.println("Suma: "+suma);
+		
+//		// 
+//		int[] i = personas.stream()
+//					.sorted()
+//					.map(Persona::getEdad)
+//					.toArray();
+		
+		// El método reduce. Sirve para acumular cosas.
+		int sumaEdad = personas.stream()
+				.reduce(new Persona("", 0), (acc, e) -> {
+					acc.setEdad(acc.getEdad() + e.getEdad());
+					return acc;
+				}).getEdad();
+		
+		System.out.println("Suma usando reduce"+sumaEdad);
+		
+		// Agrupar por edades
+		Map<Integer, List<Persona>> mapa = personas.stream().collect(Collectors.groupingBy(Persona::getEdad));
+		
+		for(int edad: mapa.keySet()){
+			System.out.println("Edad="+edad);
+			for(Persona p: mapa.get(edad)){
+				System.out.println("   Nombre="+p.getNombre());
+			}
+		}
 	}
 
 }
