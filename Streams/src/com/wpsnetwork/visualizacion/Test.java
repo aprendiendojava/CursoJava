@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.ToIntFunction;
+
+import com.wpsnetwork.entidades.Persona;
 
 public class Test {
 
@@ -61,6 +64,22 @@ public class Test {
 										.toArray();
 
 		System.out.println("Con mapToInt y ::="+Arrays.toString(longitudes1));
+		
+		List<Persona> personas = new ArrayList<>();
+		personas.add(new Persona("Pedro", 50));
+		personas.add(new Persona("Juan", 49));
+		personas.add(new Persona("Marta", 30));
+		personas.add(new Persona("Luis", 30));
+		personas.add(new Persona("María", 26));
+		
+		// Obtener el nombre de la persona mas mayor
+//		SELECT nombre FROM personas WHERE edad = (SELECT MAX (edad) FROM personas);
+		
+		String nombre = personas.stream()
+								.max((e1,e2) -> Integer.compare(e1.getEdad(), e2.getEdad()))
+								.get()							// Persona
+								.getNombre();					// Nombre
+								
 	}
 
 }
