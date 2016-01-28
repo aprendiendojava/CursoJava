@@ -66,7 +66,8 @@ public class Test {
 		System.out.println("Con mapToInt y ::="+Arrays.toString(longitudes1));
 		
 		List<Persona> personas = new ArrayList<>();
-		personas.add(new Persona("Pedro", 50));
+		personas.add(new Persona("Pedro", 49));
+		personas.add(new Persona("Pedro1", 48));
 		personas.add(new Persona("Juan", 49));
 		personas.add(new Persona("Marta", 30));
 		personas.add(new Persona("Luis", 30));
@@ -79,7 +80,18 @@ public class Test {
 								.max((e1,e2) -> Integer.compare(e1.getEdad(), e2.getEdad()))
 								.get()							// Persona
 								.getNombre();					// Nombre
-								
+		
+		System.out.println(nombre);		// Si hay repetidos se queda con el primero.
+		
+		
+		// Obtener los nombres de las personas ordenadas
+		String[] n2 = (String[]) personas.stream()
+							.map(Persona::getNombre)	// Convierte de Persona a String[]
+							.sorted()					// Ordena strings
+							.toArray(len -> new String[len]);
+		
+		System.out.println(Arrays.toString(n2));
+							
 	}
 
 }
