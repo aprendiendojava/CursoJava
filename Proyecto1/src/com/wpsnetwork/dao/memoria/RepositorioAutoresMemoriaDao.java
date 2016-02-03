@@ -6,7 +6,14 @@ import com.wpsnetwork.dao.entidades.Autor;
 import com.wpsnetwork.dao.interfaces.Dao;
 
 public class RepositorioAutoresMemoriaDao implements Dao<Autor>{
-
+    
+//	private -....
+	
+	// se pueden inicializar aqui variables estaticas
+	static{
+		
+	}
+	
 	@Override
 	public Autor get(int id) {
 		return null;

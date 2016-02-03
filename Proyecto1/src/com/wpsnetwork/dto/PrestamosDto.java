@@ -9,6 +9,4 @@ public class PrestamosDto {
 	public PrestamosDto(RepositorioPrestamosMemoriaDao repPrestamo) {
 		super();
 	}
-	
-	
 }
