@@ -3,32 +3,33 @@ package com.wpsnetwork.dao.memoria;
 import java.util.List;
 
 import com.wpsnetwork.dao.entidades.CategoriaLibro;
+import com.wpsnetwork.dao.entidades.CategoriasLibros;
 import com.wpsnetwork.dao.interfaces.Dao;
 
-public class RepositorioCategoriasLibrosMemoriaDao implements Dao<CategoriaLibro> {
+public class RepositorioCategoriasLibrosMemoriaDao implements Dao<CategoriasLibros> {
 
 	@Override
-	public CategoriaLibro get(int id) {
+	public CategoriasLibros get(int id) {
 		return null;
 	}
 
 	@Override
-	public void insert(CategoriaLibro elemento) {
+	public void insert(CategoriasLibros elemento) {
 		
 	}
 
 	@Override
-	public void update(CategoriaLibro elemento) {
+	public void update(CategoriasLibros elemento) {
 		
 	}
 
 	@Override
-	public void delete(CategoriaLibro elemento) {
+	public void delete(CategoriasLibros elemento) {
 		
 	}
 
 	@Override
-	public List<CategoriaLibro> getAll() {
+	public List<CategoriasLibros> getAll() {
 		return null;
 	}
 
