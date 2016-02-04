@@ -22,7 +22,7 @@ public class AutoresDto implements Dao{
 	}
 
 	@Override
-	public Object get(int id) {
+	public Autor get(int id) {
 		com.wpsnetwork.dao.entidades.Autor autorDao = autoresDao.get(id);
 //		return new Autor(autorDao, null)
 		return null;
@@ -30,7 +30,6 @@ public class AutoresDto implements Dao{
 	
 	@Override
 	public void insert(Object elemento) {
-		// TODO Auto-generated method stub
 		
 	}
 //	@Override
