@@ -51,6 +51,7 @@ public class Main {
 				opcion = leerTeclado();
 			} catch(NumeroNoValidoException e){
 				continuar = true;
+				System.out.println("Vuelve a preguntar");
 			}
 			
 		} while (continuar);

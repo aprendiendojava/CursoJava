@@ -43,7 +43,10 @@ public class TestConsola {
 		// Sólo java 8
 		lista.stream().allMatch(e -> e.getArea() > 10);	// e es una figura (lo sabe porque lista es una lista de figuras) Devuelve boolean
 		lista.stream().filter(e -> e.getArea() > 10);	// e es una figura (lo sabe porque lista es una lista de figuras) Devuelve los que lo cumplan
-		lista.parallelStream().filter(e -> e.getArea() > 10);	// e es una figura (lo sabe porque lista es una lista de figuras) Devuelve los que lo cumplan. En paralelo.
+		// La siguiente línea no devuelve nada, porque hace un println de todo lo anterior
+//		lista.parallelStream().filter(e -> e.getArea() > 40).forEach(f -> System.out.println(f));	// e es una figura (lo sabe porque lista es una lista de figuras) Devuelve los que lo cumplan. En paralelo.
+		// Al estar en paralelo puede pintar antes el círulo o el triángulo, indiferentemente.  
+		lista.stream().map(e -> e.getArea() > 40).forEach(f -> System.out.println(f));	// e es una figura (lo sabe porque lista es una lista de figuras) Devuelve los que lo cumplan. En paralelo.
 	}
 
 	private static int operar(OperacionBinaria op, int a, int b) {

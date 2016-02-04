@@ -5,6 +5,13 @@ public class Piso {
 	private int numPuerta;
 	private double precio;
 	
+	public Piso(int planta, int numPuerta, double precio) {
+		super();
+		this.planta = planta;
+		this.numPuerta = numPuerta;
+		this.precio = precio;
+	}
+	
 	public int getPlanta() {
 		return planta;
 	}
@@ -23,6 +30,9 @@ public class Piso {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Piso [planta=" + planta + ", numPuerta=" + numPuerta + ", precio=" + precio + "]";
+	}
 }
