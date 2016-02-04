@@ -43,19 +43,16 @@ public class AutoresDto implements Dao{
 
 	@Override
 	public void update(Object elemento) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void delete(Object elemento) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public List getAll() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }
