@@ -1,7 +1,8 @@
 package com.wpsnetwork.library.enumerados;
 
 public enum TipoObjeto {
-	AUTOR("autor"), LIBRO("libro"), CATEGORIALIBRO("categoriaLibro"), PRESTAMO("prestamo"), PERSONA("persona");
+	AUTOR("autor"), LIBRO("libro"), LIBROSAUTORES("librosAutores"), CATEGORIA("categoria")
+	, CATEGORIALIBRO("categoriaLibro"), PRESTAMO("prestamo"), PERSONA("persona");
 	
 	private String tipoObjeto;
 	

@@ -10,9 +10,13 @@ public class AutoresDto {
 	private Autor autorDto = new Autor();
 	private List<Libro> libros;
 
-	public AutoresDto(RepositorioAutoresMemoriaDao repAutor) {
+	public AutoresDto(RepositorioAutoresMemoriaDao repAutor, int id) {
 		super();
+		autorDto.setId(id);
+		autorDto.setNombre(repAutor.get(id).getNombre());
+//		for(Autor a:repAutor.getAll()){
+//			libros.add(a.);
+//		}
 		
-//		libros <- getAll
 	}
 }

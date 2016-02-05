@@ -3,6 +3,8 @@ package com.wpsnetwork.library.dao.factorias;
 import com.wpsnetwork.library.dao.interfaces.Dao;
 import com.wpsnetwork.library.dao.memoria.RepositorioAutoresMemoriaDao;
 import com.wpsnetwork.library.dao.memoria.RepositorioCategoriasLibrosMemoriaDao;
+import com.wpsnetwork.library.dao.memoria.RepositorioCategoriasMemoriaDao;
+import com.wpsnetwork.library.dao.memoria.RepositorioLibrosAutoresMemoriaDao;
 import com.wpsnetwork.library.dao.memoria.RepositorioLibrosMemoriaDao;
 import com.wpsnetwork.library.dao.memoria.RepositorioPersonasMemoriaDao;
 import com.wpsnetwork.library.dao.memoria.RepositorioPrestamosMemoriaDao;
@@ -21,6 +23,12 @@ public class FactoriaDao {
 				break;
 			case LIBRO:
 				repositorio = new RepositorioLibrosMemoriaDao();
+				break;
+			case LIBROSAUTORES:
+				repositorio = new RepositorioLibrosAutoresMemoriaDao();
+				break;
+			case CATEGORIA:
+				repositorio = new RepositorioCategoriasMemoriaDao();
 				break;
 			case CATEGORIALIBRO:
 				repositorio = new RepositorioCategoriasLibrosMemoriaDao();

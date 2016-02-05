@@ -24,5 +24,22 @@ public class Autor {
 		this.nombre = nombre;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Autor other = (Autor) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
 	
+	@Override
+	public String toString() {
+		return "Autor [id=" + id + ", nombre=" + nombre + "]";
+	}
 }

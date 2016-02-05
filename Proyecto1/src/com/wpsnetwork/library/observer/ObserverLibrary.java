@@ -1,5 +1,7 @@
 package com.wpsnetwork.library.observer;
 
-public interface ObserverLibrary {
+import org.apache.log4j.Logger;
 
+public interface ObserverLibrary {
+	void mensaje (Logger log);
 }
