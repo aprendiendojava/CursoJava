@@ -1,6 +1,7 @@
 package com.wpsnetwork.dto.entidades;
 
 import java.util.Date;
+import java.util.List;
 
 public class Prestamo {
 	private int id;
@@ -9,10 +10,11 @@ public class Prestamo {
 	private char devuelto;
 	private int libro;
 	private int persona;
+	private List<Prestamo> prestamos;
 	public Prestamo() {
 		super();
 	}
-	public Prestamo(int id, Date fechaInicio, Date fechaFin, char devuelto, int libro, int persona) {
+	public Prestamo(int id, Date fechaInicio, Date fechaFin, char devuelto, int libro, int persona, List<Prestamo> prestamos) {
 		super();
 		this.id = id;
 		this.fechaInicio = fechaInicio;
@@ -20,6 +22,7 @@ public class Prestamo {
 		this.devuelto = devuelto;
 		this.libro = libro;
 		this.persona = persona;
+		this.prestamos = prestamos;
 	}
 	public int getId() {
 		return id;
@@ -57,5 +60,10 @@ public class Prestamo {
 	public void setPersona(int persona) {
 		this.persona = persona;
 	}
-	
+	public List<Prestamo> getPrestamos() {
+		return prestamos;
+	}
+	public void setPrestamos(List<Prestamo> prestamos) {
+		this.prestamos = prestamos;
+	}	
 }

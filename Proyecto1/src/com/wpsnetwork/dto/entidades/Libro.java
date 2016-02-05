@@ -9,14 +9,14 @@ public class Libro {
 	private String editorial;
 	private int edicion;
 	private List<Autor> autores;
-	private List<CategoriaLibro> categorias;
+	private List<Categoria> categorias;
 
 	public Libro() {
 		super();
 	}
 	
 	public Libro(int id, String titulo, int paginas, String editorial, int edicion, List<Autor> autores,
-			List<CategoriaLibro> categorias) {
+			List<Categoria> categorias) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -66,11 +66,11 @@ public class Libro {
 		this.autores = autores;
 	}
 
-	public List<CategoriaLibro> getCategorias() {
+	public List<Categoria> getCategorias() {
 		return categorias;
 	}
 
-	public void setCategorias(List<CategoriaLibro> categorias) {
+	public void setCategorias(List<Categoria> categorias) {
 		this.categorias = categorias;
 	}
 	

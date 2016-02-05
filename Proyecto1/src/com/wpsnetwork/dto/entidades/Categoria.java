@@ -2,15 +2,15 @@ package com.wpsnetwork.dto.entidades;
 
 import java.util.List;
 
-public class CategoriaLibro {
+public class Categoria {
 	private int id;
 	private String nombre;
 	private List<Libro> libros;
 	
-	public CategoriaLibro() {
+	public Categoria() {
 		super();
 	}
-	public CategoriaLibro(int id, String nombre, List<Libro> libros) {
+	public Categoria(int id, String nombre, List<Libro> libros) {
 		super();
 		this.id = id;
 		this.nombre = nombre;

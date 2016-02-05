@@ -1,6 +1,7 @@
 package com.wpsnetwork.dto.entidades;
 
 import java.util.Date;
+import java.util.List;
 
 public class Persona {
 	private int id;
@@ -12,11 +13,12 @@ public class Persona {
 	private String pais;
 	private String provincia;
 	private String codPostal;
+	private List<Prestamo> prestamos;
 	public Persona() {
 		super();
 	}
 	public Persona(int id, String nombre, String dni, Date fechaNacimiento, String direccion, String telefono,
-			String pais, String provincia, String codPostal) {
+			String pais, String provincia, String codPostal, List<Prestamo> prestamos) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -27,6 +29,7 @@ public class Persona {
 		this.pais = pais;
 		this.provincia = provincia;
 		this.codPostal = codPostal;
+		this.prestamos = prestamos;
 	}
 	public int getId() {
 		return id;
@@ -82,6 +85,11 @@ public class Persona {
 	public void setCodPostal(String codPostal) {
 		this.codPostal = codPostal;
 	}
-	
+	public List<Prestamo> getPrestamos() {
+		return prestamos;
+	}
+	public void setPrestamos(List<Prestamo> prestamos) {
+		this.prestamos = prestamos;
+	}
 
 }
