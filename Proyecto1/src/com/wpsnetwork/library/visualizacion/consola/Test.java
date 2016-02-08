@@ -1,6 +1,7 @@
 package com.wpsnetwork.library.visualizacion.consola;
 
-import org.apache.logging.log4j.Logger;
+
+import org.apache.log4j.Logger;
 
 import com.wpsnetwork.library.dao.entidades.Autor;
 import com.wpsnetwork.library.dao.factorias.FactoriaDao;
