@@ -33,13 +33,17 @@ public class RepositorioLibrosMemoriaDao implements Dao<Libro>{
 
 	@Override
 	public void update(Libro elemento) {
-		for(Libro libro:libros){
-			if(libro.equals(elemento)){
-				libro.setTitulo(elemento.getTitulo());
-				libro.setPaginas(elemento.getPaginas());
-				libro.setEditorial(elemento.getEditorial());
-				libro.setEdicion(elemento.getEdicion());
-			}
+//		for(Libro libro:libros){
+//			if(libro.equals(elemento)){
+//				libro.setTitulo(elemento.getTitulo());
+//				libro.setPaginas(elemento.getPaginas());
+//				libro.setEditorial(elemento.getEditorial());
+//				libro.setEdicion(elemento.getEdicion());
+//			}
+//		}
+		boolean borrado = libros.remove(elemento);
+		if(borrado){
+			libros.add(elemento);
 		}
 	}
 

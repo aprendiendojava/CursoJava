@@ -2,12 +2,12 @@ package com.wpsnetwork.library.visualizacion.consola;
 
 import org.apache.log4j.Logger;
 
-import com.wpsnetwork.library.dao.entidades.Autor;
 import com.wpsnetwork.library.dao.factorias.FactoriaDao;
-import com.wpsnetwork.library.dao.memoria.RepositorioAutoresMemoriaDao;
-import com.wpsnetwork.library.dao.memoria.RepositorioCategoriasMemoriaDao;
-import com.wpsnetwork.library.dao.memoria.RepositorioLibrosAutoresMemoriaDao;
-import com.wpsnetwork.library.dao.memoria.RepositorioLibrosMemoriaDao;
+import com.wpsnetwork.library.dto.AutoresDto;
+import com.wpsnetwork.library.dto.CategoriasDto;
+import com.wpsnetwork.library.dto.LibrosDto;
+import com.wpsnetwork.library.dto.PersonasDto;
+import com.wpsnetwork.library.dto.PrestamosDto;
 import com.wpsnetwork.library.enumerados.TipoObjeto;
 
 public class Test {
@@ -46,18 +46,19 @@ public class Test {
 //	    log.error("mensaje de error");
 //	    log.fatal("mensaje de fatal");
 		
-		RepositorioAutoresMemoriaDao repoAutores =
-				(RepositorioAutoresMemoriaDao) new FactoriaDao().getDao("MEMORIA", TipoObjeto.AUTOR);
-		RepositorioLibrosMemoriaDao repoLibros =
-				(RepositorioLibrosMemoriaDao) new FactoriaDao().getDao("MEMORIA", TipoObjeto.LIBRO);
-		RepositorioLibrosAutoresMemoriaDao repoLibrosAutores =
-				(RepositorioLibrosAutoresMemoriaDao) new FactoriaDao().getDao("MEMORIA", TipoObjeto.LIBROSAUTORES);
-		RepositorioCategoriasMemoriaDao repoCategorias =
-				(RepositorioCategoriasMemoriaDao) new FactoriaDao().getDao("MEMORIA", TipoObjeto.CATEGORIA);
+		AutoresDto repAutores = new AutoresDto();
+		LibrosDto repLibros = new LibrosDto();
+		CategoriasDto repCategorias = new CategoriasDto();
+		PersonasDto repPersonas = new PersonasDto();
+		PrestamosDto repPrestamos = new PrestamosDto();
 
-		System.out.println("Autores: "+repoAutores.toString());
-		System.out.println("Libros: "+repoLibros.toString());
-		System.out.println("Libros: "+repoLibrosAutores.toString());
-		System.out.println("Categorías: "+repoCategorias.toString());
+		System.out.println("Autores: "+repAutores.toString());
+		System.out.println("Libros: "+repLibros.toString());
+//		System.out.println("Libros: "+repoLibrosAutores.toString());
+		System.out.println("Categorías: "+repCategorias.toString());
+		System.out.println("Personas: "+repPersonas.toString());
+		System.out.println("Prestamos: "+repPrestamos.toString());
+		
+		//patata
 	}
 }

@@ -84,4 +84,32 @@ public class Persona {
 	public void setCodPostal(String codPostal) {
 		this.codPostal = codPostal;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		if (id != other.id || dni != other.dni)
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Persona [id=" + id + ", nombre=" + nombre + ", dni=" + dni + ", fechaNacimiento=" + fechaNacimiento
+				+ ", direccion=" + direccion + ", telefono=" + telefono + ", pais=" + pais + ", provincia=" + provincia
+				+ ", codPostal=" + codPostal + "]";
+	}
+
+
 }

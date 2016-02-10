@@ -1,22 +1,30 @@
 package com.wpsnetwork.library.dto;
 
-import java.util.List;
-
-import com.wpsnetwork.library.dao.memoria.RepositorioAutoresMemoriaDao;
+import com.wpsnetwork.library.dao.factorias.FactoriaDao;
+import com.wpsnetwork.library.dao.interfaces.Dao;
 import com.wpsnetwork.library.dto.entidades.Autor;
-import com.wpsnetwork.library.dto.entidades.Libro;
+import com.wpsnetwork.library.enumerados.TipoObjeto;
 
 public class AutoresDto {
-	private Autor autorDto = new Autor();
-	private List<Libro> libros;
+//	private Autor autorDto = new Autor();
+//	private List<Libro> libros;
+	
+	private Dao<Autor> repAutor;
 
-	public AutoresDto(RepositorioAutoresMemoriaDao repAutor, int id) {
+	public AutoresDto() {
 		super();
-		autorDto.setId(id);
-		autorDto.setNombre(repAutor.get(id).getNombre());
-//		for(Autor a:repAutor.getAll()){
-//			libros.add(a.);
-//		}
-		
+		this.repAutor = (Dao<Autor>) new FactoriaDao().getDao("MEMORIA", TipoObjeto.AUTOR);
 	}
+
+	public AutoresDto(Dao<Autor> repAutor) {
+		super();
+		this.repAutor = repAutor;
+	}
+
+	@Override
+	public String toString() {
+		return "AutoresDto [repAutor=" + repAutor.toString() + "]";
+	}
+
+
 }

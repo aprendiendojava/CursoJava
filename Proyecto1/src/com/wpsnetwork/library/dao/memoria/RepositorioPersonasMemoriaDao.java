@@ -16,27 +16,45 @@ public class RepositorioPersonasMemoriaDao implements Dao<Persona> {
 	
 	@Override
 	public Persona get(int id) {
-		return null;
+		return (Persona) personas.stream().filter(e -> e.getId() == id);
 	}
 
 	@Override
 	public void insert(Persona elemento) {
-		
+		//miramos si hay un id igual, en caso contrario, insertamos
+		boolean hayIguales = false;
+		for(Persona persona:personas){
+			if(persona.equals(elemento)){
+				hayIguales = true;
+			}
+		}
+		if(!hayIguales){
+			personas.add(elemento);
+		}
+				
 	}
 
 	@Override
 	public void update(Persona elemento) {
-		
+		boolean borrado = personas.remove(elemento);
+		if(borrado){
+			personas.add(elemento);
+		}
 	}
 
 	@Override
 	public void delete(Persona elemento) {
-		
+		personas.remove(elemento);
 	}
 
 	@Override
 	public List<Persona> getAll() {
-		return null;
+		List<Persona> personasDao = Arrays.asList(this.personas.get(0), this.personas.get(1), this.personas.get(2));
+		return personasDao;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "RepositorioPersonasMemoriaDao [getAll()=" + getAll().toString() + "]";
+	}
 }

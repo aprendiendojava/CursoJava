@@ -12,7 +12,7 @@ public class RepositorioLibrosAutoresMemoriaDao implements Dao<LibroAutor> {
 	
 	@Override
 	public LibroAutor get(int id) {
-		return librosAutores.get(id);
+		return (LibroAutor) librosAutores.stream().filter(e -> e.getId() == id);
 	}
 
 	@Override
@@ -22,7 +22,10 @@ public class RepositorioLibrosAutoresMemoriaDao implements Dao<LibroAutor> {
 
 	@Override
 	public void update(LibroAutor elemento) {
-		
+		boolean borrado = librosAutores.remove(elemento);
+		if(borrado){
+			librosAutores.add(elemento);
+		}
 	}
 
 	@Override
