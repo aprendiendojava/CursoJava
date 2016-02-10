@@ -62,8 +62,8 @@ public class Prestamo {
 	@Override
 	public String toString() {
 		return "\nPrestamo [id=" + id + "\n"
-			+ "	fechaInicio=" + fechaInicio.toString() + "\n"
-			+ "	fechaFin=" + fechaFin.toString() + "\n"
+			+ "	fechaInicio=" + fechaInicio.toString().replace("-", "/") + "\n"
+			+ "	fechaFin=" + fechaFin.toString().replace("-", "/") + "\n"
 			+ "	devuelto="+ devuelto + "\n"
 			+ "	libro=" + libro + "\n"
 			+ "	persona=" + persona + "]";

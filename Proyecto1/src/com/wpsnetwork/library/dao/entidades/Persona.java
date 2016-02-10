@@ -7,7 +7,7 @@ public class Persona {
 	private int id;
 	private String nombre;
 	private String dni;
-	private java.time.LocalDate fechaNacimiento;
+	private LocalDate fechaNacimiento;
 	private String direccion;
 	private String telefono;
 	private String pais;
@@ -102,7 +102,7 @@ public class Persona {
 		return "\nPersona [id=" + id + "\n"
 				+ "	nombre=" + nombre + "\n"
 				+ "	dni=" + dni + "\n"
-				+ "	fechaNacimiento=" + fechaNacimiento.toString() + "\n"
+				+ "	fechaNacimiento=" + fechaNacimiento.toString().replace("-", "/") + "\n"
 				+ "	direccion=" + direccion + "\n"
 				+ "	telefono=" + telefono + "\n"
 				+ "	pais=" + pais + "\n"
