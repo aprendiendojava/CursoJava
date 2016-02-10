@@ -1,7 +1,8 @@
 package com.wpsnetwork.library.dao.memoria;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 import com.wpsnetwork.library.dao.entidades.Persona;
@@ -10,9 +11,9 @@ import com.wpsnetwork.library.dao.interfaces.Dao;
 public class RepositorioPersonasMemoriaDao implements Dao<Persona> {
 
 	public static List<Persona> personas = Arrays.asList(
-			new Persona(1, "Persona1", "dni1", new Date(), "direccion1", "telefono1", "pais1", "provincia1", "codpostal1")
-			, new Persona(2, "Persona2", "dni2", new Date(), "direccion2", "telefono2", "pais2", "provincia2", "codpostal2")
-			, new Persona(3, "Persona3", "dni3", new Date(), "direccion3", "telefono3", "pais3", "provincia3", "codpostal3"));
+			new Persona(1, "Persona1", "dni1", LocalDate.of(1990, Month.FEBRUARY, 02), "direccion1", "telefono1", "pais1", "provincia1", "codpostal1")
+			, new Persona(2, "Persona2", "dni2", LocalDate.of(1985, Month.DECEMBER, 21), "direccion2", "telefono2", "pais2", "provincia2", "codpostal2")
+			, new Persona(3, "Persona3", "dni3", LocalDate.of(1995, Month.JANUARY, 26), "direccion3", "telefono3", "pais3", "provincia3", "codpostal3"));
 	
 	@Override
 	public Persona get(int id) {

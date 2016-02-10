@@ -1,12 +1,12 @@
 package com.wpsnetwork.library.dao.entidades;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Prestamo {
 	private int id;
-	private Date fechaInicio;
-	private Date fechaFin;
+	private LocalDate fechaInicio;
+	private LocalDate fechaFin;
 	private char devuelto;
 	private int libro;
 	private int persona;
@@ -14,7 +14,7 @@ public class Prestamo {
 	public Prestamo() {
 		super();
 	}
-	public Prestamo(int id, Date fechaInicio, Date fechaFin, char devuelto, int libro, int persona) {
+	public Prestamo(int id, LocalDate fechaInicio, LocalDate fechaFin, char devuelto, int libro, int persona) {
 		super();
 		this.id = id;
 		this.fechaInicio = fechaInicio;
@@ -29,16 +29,16 @@ public class Prestamo {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Date getFechaInicio() {
+	public LocalDate getFechaInicio() {
 		return fechaInicio;
 	}
-	public void setFechaInicio(Date fechaInicio) {
+	public void setFechaInicio(LocalDate fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
-	public Date getFechaFin() {
+	public LocalDate getFechaFin() {
 		return fechaFin;
 	}
-	public void setFechaFin(Date fechaFin) {
+	public void setFechaFin(LocalDate fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 	public char getDevuelto() {
@@ -58,6 +58,15 @@ public class Prestamo {
 	}
 	public void setPersona(int persona) {
 		this.persona = persona;
+	}
+	@Override
+	public String toString() {
+		return "\nPrestamo [id=" + id + "\n"
+			+ "	fechaInicio=" + fechaInicio.toString() + "\n"
+			+ "	fechaFin=" + fechaFin.toString() + "\n"
+			+ "	devuelto="+ devuelto + "\n"
+			+ "	libro=" + libro + "\n"
+			+ "	persona=" + persona + "]";
 	}
 	
 }

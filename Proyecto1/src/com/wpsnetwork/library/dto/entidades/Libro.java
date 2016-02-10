@@ -73,6 +73,4 @@ public class Libro {
 	public void setCategorias(List<Categoria> categorias) {
 		this.categorias = categorias;
 	}
-	
-	
 }

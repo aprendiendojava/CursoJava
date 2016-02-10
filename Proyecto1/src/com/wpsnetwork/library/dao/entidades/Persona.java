@@ -1,13 +1,13 @@
 package com.wpsnetwork.library.dao.entidades;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Persona {
 	private int id;
 	private String nombre;
 	private String dni;
-	private Date fechaNacimiento;
+	private java.time.LocalDate fechaNacimiento;
 	private String direccion;
 	private String telefono;
 	private String pais;
@@ -17,7 +17,7 @@ public class Persona {
 	public Persona() {
 		super();
 	}
-	public Persona(int id, String nombre, String dni, Date fechaNacimiento, String direccion, String telefono,
+	public Persona(int id, String nombre, String dni, LocalDate fechaNacimiento, String direccion, String telefono,
 			String pais, String provincia, String codPostal) {
 		super();
 		this.id = id;
@@ -48,10 +48,10 @@ public class Persona {
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
-	public Date getFechaNacimiento() {
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	public String getDireccion() {
@@ -85,13 +85,6 @@ public class Persona {
 		this.codPostal = codPostal;
 	}
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + id;
-		return result;
-	}
-	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -106,9 +99,15 @@ public class Persona {
 	}
 	@Override
 	public String toString() {
-		return "Persona [id=" + id + ", nombre=" + nombre + ", dni=" + dni + ", fechaNacimiento=" + fechaNacimiento
-				+ ", direccion=" + direccion + ", telefono=" + telefono + ", pais=" + pais + ", provincia=" + provincia
-				+ ", codPostal=" + codPostal + "]";
+		return "\nPersona [id=" + id + "\n"
+				+ "	nombre=" + nombre + "\n"
+				+ "	dni=" + dni + "\n"
+				+ "	fechaNacimiento=" + fechaNacimiento.toString() + "\n"
+				+ "	direccion=" + direccion + "\n"
+				+ "	telefono=" + telefono + "\n"
+				+ "	pais=" + pais + "\n"
+				+ "	provincia=" + provincia + "\n"
+				+ "	codPostal=" + codPostal + "]";
 	}
 
 
