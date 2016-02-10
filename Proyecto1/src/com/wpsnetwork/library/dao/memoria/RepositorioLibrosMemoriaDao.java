@@ -14,27 +14,51 @@ public class RepositorioLibrosMemoriaDao implements Dao<Libro>{
 			
 	@Override
 	public Libro get(int id) {
-		return null;
+		return (Libro) libros.stream().distinct().filter(e -> e.getId() == id);
 	}
 
 	@Override
 	public void insert(Libro elemento) {
-		
+		//miramos si hay un id igual, en caso contrario, insertamos
+		boolean hayIguales = false;
+		for(Libro libro: libros){
+			if (libro.equals(elemento)){
+				hayIguales = true;
+			}
+		}
+		if(!hayIguales){
+			libros.add(elemento);
+		}
 	}
 
 	@Override
 	public void update(Libro elemento) {
-		
+		for(Libro libro:libros){
+			if(libro.equals(elemento)){
+				libro.setTitulo(elemento.getTitulo());
+				libro.setPaginas(elemento.getPaginas());
+				libro.setEditorial(elemento.getEditorial());
+				libro.setEdicion(elemento.getEdicion());
+			}
+		}
 	}
 
 	@Override
 	public void delete(Libro elemento) {
-		
+		libros.remove(elemento);
 	}
 
 	@Override
 	public List<Libro> getAll() {
-		return null;
+		List<com.wpsnetwork.library.dao.entidades.Libro> librosDao = Arrays.asList(this.libros.get(0)
+				, this.libros.get(1)
+				, this.libros.get(2));
+		return librosDao;
+	}
+
+	@Override
+	public String toString() {
+		return "RepositorioLibrosMemoriaDao [getAll()=" + getAll().toString() + "]";
 	}
 
 }

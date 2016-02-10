@@ -16,7 +16,6 @@ public class FactoriaDao {
 		
 		Dao repositorio;
 		if(tipoAcceso == "MEMORIA"){
-			
 			switch(tipoObjeto){
 			case AUTOR:
 				repositorio = new RepositorioAutoresMemoriaDao();

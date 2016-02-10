@@ -40,6 +40,7 @@ public class Autor {
 	
 	@Override
 	public String toString() {
-		return "Autor [id=" + id + ", nombre=" + nombre + "]";
+		return "\nAutor [	id=" + id + "\n"
+				+ "	nombre=" + nombre + "]";
 	}
 }

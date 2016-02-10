@@ -9,6 +9,4 @@ public class LibrosDto {
 	public LibrosDto(RepositorioLibrosMemoriaDao repLibro) {
 		super();
 	}
-	
-	
 }

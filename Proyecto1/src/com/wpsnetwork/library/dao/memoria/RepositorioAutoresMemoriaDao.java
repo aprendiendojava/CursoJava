@@ -4,12 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.wpsnetwork.library.dao.entidades.Autor;
-import com.wpsnetwork.library.dao.entidades.CategoriaLibro;
 import com.wpsnetwork.library.dao.interfaces.Dao;
 
 public class RepositorioAutoresMemoriaDao implements Dao<Autor>{
     
-	public static List<Autor> autores = Arrays.asList(new Autor(1, "Antonio"), new Autor(2, "Pepe"), new Autor(3, "Anonimo"));
+	private static List<Autor> autores = Arrays.asList(new Autor(1, "Antonio"), new Autor(2, "Pepe"), new Autor(3, "Anonimo"));
 	
 	// se pueden inicializar aqui variables estaticas
 	static{
@@ -18,12 +17,13 @@ public class RepositorioAutoresMemoriaDao implements Dao<Autor>{
 	
 	@Override
 	public Autor get(int id) {
-		for(Autor autor : this.autores){
-			if (autor.getId() == id){
-				return autor;				// No es la mejor forma de hacerlo, poniendo dos return en el mismo método, pero voy con prisa
-			}
-		}
-		return null;
+//		for(Autor autor : this.autores){
+//			if (autor.getId() == id){
+//				return autor;				// No es la mejor forma de hacerlo, poniendo dos return en el mismo método, pero voy con prisa
+//			}
+//		}
+//		return null;
+		return (Autor) autores.stream().distinct().filter(e -> e.getId() == id);
 	}
 
 	@Override
@@ -53,18 +53,18 @@ public class RepositorioAutoresMemoriaDao implements Dao<Autor>{
 
 	@Override
 	public void delete(Autor elemento) {
-		// recorre lista y cuando lo encuentre, lo borra
 		autores.remove( elemento );
 	}
 
 	@Override
 	public List<Autor> getAll() {
-		return this.autores;
+		List<com.wpsnetwork.library.dao.entidades.Autor> autoresDao = Arrays.asList(autores.get(0), autores.get(1), autores.get(2)); 
+		return autoresDao;
 	}
 
 	@Override
 	public String toString() {
-		return "RepositorioAutoresMemoriaDao [getAll()=" + getAll() + "]";
+		return "RepositorioAutoresMemoriaDao [getAll()=" + getAll().toString() + "]";
 	}
 
 }

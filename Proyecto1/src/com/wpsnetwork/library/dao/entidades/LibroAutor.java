@@ -32,6 +32,12 @@ public class LibroAutor {
 	public void setAutor(int autor) {
 		this.autor = autor;
 	}
+	@Override
+	public String toString() {
+		return "\nLibroAutor [id=" + id + "\n"
+				+ "	libro=" + libro + "\n"
+				+ "	autor=" + autor + "]";
+	}
 	
 	
 }

@@ -4,13 +4,16 @@ import org.apache.log4j.Logger;
 
 import com.wpsnetwork.library.dao.entidades.Autor;
 import com.wpsnetwork.library.dao.factorias.FactoriaDao;
+import com.wpsnetwork.library.dao.memoria.RepositorioAutoresMemoriaDao;
+import com.wpsnetwork.library.dao.memoria.RepositorioCategoriasMemoriaDao;
+import com.wpsnetwork.library.dao.memoria.RepositorioLibrosAutoresMemoriaDao;
+import com.wpsnetwork.library.dao.memoria.RepositorioLibrosMemoriaDao;
 import com.wpsnetwork.library.enumerados.TipoObjeto;
 
 public class Test {
  
 	// Porqué? Porque eso pone en "http://www.javatutoriales.com/2011/04/log4j-para-creacion-de-eventos-de-log.html"
 	private static Logger log = Logger.getLogger(Test.class);
-	
 	
 	public static void main(String[] args) {
 		/**
@@ -43,11 +46,18 @@ public class Test {
 //	    log.error("mensaje de error");
 //	    log.fatal("mensaje de fatal");
 		
-		FactoriaDao repositorio = new FactoriaDao();
-		Autor autor = new Autor(1, "Pepito");
-		repositorio.getDao("MEMORIA", TipoObjeto.AUTOR).insert(autor); 
-		
-		System.out.println("Autor: "+repositorio.toString());
-		
+		RepositorioAutoresMemoriaDao repoAutores =
+				(RepositorioAutoresMemoriaDao) new FactoriaDao().getDao("MEMORIA", TipoObjeto.AUTOR);
+		RepositorioLibrosMemoriaDao repoLibros =
+				(RepositorioLibrosMemoriaDao) new FactoriaDao().getDao("MEMORIA", TipoObjeto.LIBRO);
+		RepositorioLibrosAutoresMemoriaDao repoLibrosAutores =
+				(RepositorioLibrosAutoresMemoriaDao) new FactoriaDao().getDao("MEMORIA", TipoObjeto.LIBROSAUTORES);
+		RepositorioCategoriasMemoriaDao repoCategorias =
+				(RepositorioCategoriasMemoriaDao) new FactoriaDao().getDao("MEMORIA", TipoObjeto.CATEGORIA);
+
+		System.out.println("Autores: "+repoAutores.toString());
+		System.out.println("Libros: "+repoLibros.toString());
+		System.out.println("Libros: "+repoLibrosAutores.toString());
+		System.out.println("Categorías: "+repoCategorias.toString());
 	}
 }
