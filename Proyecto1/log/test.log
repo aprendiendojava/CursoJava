@@ -1,0 +1,6 @@
+16/02/04 16:46:53 [TRACE] wpsnetwork.consola.Test "mensaje de trace"
+16/02/04 16:46:53 [DEBUG] wpsnetwork.consola.Test "mensaje de debug"
+16/02/04 16:46:53 [INFO ] wpsnetwork.consola.Test "mensaje de info"
+16/02/04 16:46:53 [WARN ] wpsnetwork.consola.Test "mensaje de warn"
+16/02/04 16:46:53 [ERROR] wpsnetwork.consola.Test "mensaje de error"
+16/02/04 16:46:53 [FATAL] wpsnetwork.consola.Test "mensaje de fatal"
